@@ -60,4 +60,4 @@ public void onAnvilCombine(EnchantmentsCombineEvent ev) {
 }
 ```
 
-#### If you would like to see the implementation of this API in UnderscoreEnchants, click [here](https://github.com/ZBLL-CUBER/UnderscoreEnchantsCode/blob/master/src/main/java/com/roughlyunderscore/enchs/UnderscoreEnchants.java#L841).
+#### If you would like to see the implementation of this API in UnderscoreEnchants, click [here](https://github.com/ZBLL-CUBER/UnderscoreEnchantsCode/blob/master/src/main/java/com/roughlyunderscore/enchs/UnderscoreEnchants.java#L940).
