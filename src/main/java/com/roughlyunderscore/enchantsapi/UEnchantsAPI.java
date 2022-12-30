@@ -161,4 +161,18 @@ public interface UEnchantsAPI {
 	 * @param level the level of the enchantment
 	 */
 	void enchantUnrestricted(Player player, EquipmentSlot slot, Enchantment ench, int level);
+
+	/**
+	 * Attempts to load an enchantment from a given name.
+	 * @param enchantmentName the name of the enchantment
+	 * @return LOADED if the enchantment was not loaded before, RELOADED if it was
+	 */
+	EnchantmentLoadResponse loadEnchantment(String enchantmentName);
+
+	/**
+	 * Attempts to unload an enchantment from a given name.
+	 * @param enchantmentName the name of the enchantment
+	 * @return UNLOADED if the enchantment was loaded before, NOT_FOUND if couldn't find the enchantment
+	 */
+	EnchantmentUnloadResponse unloadEnchantment(String enchantmentName);
 }
