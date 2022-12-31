@@ -8,7 +8,7 @@ UnderscoreEnchantsAPI is hosted in Maven Central, so it's trivially easy to use 
 <dependency>
   <groupId>io.github.zbll-cuber.enchantsapi</groupId>
   <artifactId>UnderscoreEnchantsAPI</artifactId>
-  <version>2.0.10</version> <!-- Make sure to always use the latest version! -->
+  <version>2.1.2</version> <!-- Make sure to always use the latest version! -->
   <scope>provided</scope>
 </dependency>
 ```
@@ -53,4 +53,4 @@ public void onAnvilCombine(EnchantmentsCombineEvent ev) {
 }
 ```
 
-#### If you would like to see the implementation of this API in UnderscoreEnchants, click [here](https://github.com/ZBLL-CUBER/UnderscoreEnchantsCode/blob/master/src/main/java/com/roughlyunderscore/enchs/UnderscoreEnchants.java#L940).
+#### If you would like to see the implementation of this API in UnderscoreEnchants, click [here](https://github.com/ZBLL-CUBER/UnderscoreEnchantsCode/blob/master/src/main/java/com/roughlyunderscore/enchs/UnderscoreEnchants.java#L414).
