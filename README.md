@@ -8,7 +8,7 @@ UnderscoreEnchantsAPI is hosted in Maven Central, so it's trivially easy to use 
 <dependency>
   <groupId>io.github.zbll-cuber.enchantsapi</groupId>
   <artifactId>UnderscoreEnchantsAPI</artifactId>
-  <version>2.0.10</version> <!-- Make sure to always use the latest version! -->
+  <version>2.1.1</version> <!-- Make sure to always use the latest version! -->
   <scope>provided</scope>
 </dependency>
 ```
