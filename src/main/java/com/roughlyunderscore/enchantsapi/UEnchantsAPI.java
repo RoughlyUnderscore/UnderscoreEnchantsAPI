@@ -1,12 +1,22 @@
 package com.roughlyunderscore.enchantsapi;
 
+import com.roughlyunderscore.enchantsapi.registry.Registry;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
+@SuppressWarnings("unused")
 public interface UEnchantsAPI {
+
+	/**
+	 * Gets the data registry. Use it to register your placeholders,
+	 * actions, conditions, etc. This is the <b>only</b> way that you should
+	 * fetch the UnderscoreEnchantsAPI registry.
+	 * @return the registry
+	 */
+	Registry getRegistry();
 
 	/**
 	 * Disenchants an ItemStack - removes an enchantment of this name
@@ -15,7 +25,7 @@ public interface UEnchantsAPI {
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the item doesn't have the given enchantment
 	 * @return the disenchanted item
 	 */
-	ItemStack disenchant(ItemStack item, String name) throws IllegalArgumentException;
+	ItemStack disenchant(ItemStack item, String name);
 
 	/**
 	 * Disenchants an ItemStack - removes an enchantment, found by this namespaced key
@@ -24,7 +34,7 @@ public interface UEnchantsAPI {
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the item doesn't have the given enchantment
 	 * @return the disenchanted item
 	 */
-	ItemStack disenchant(ItemStack item, NamespacedKey key) throws IllegalArgumentException;
+	ItemStack disenchant(ItemStack item, NamespacedKey key);
 
 	/**
 	 * Disenchants an ItemStack - removes a given enchantment
@@ -33,7 +43,7 @@ public interface UEnchantsAPI {
 	 * @throws IllegalArgumentException if the item doesn't have the given enchantment
 	 * @return the disenchanted item
 	 */
-	ItemStack disenchant(ItemStack item, Enchantment ench) throws IllegalArgumentException;
+	ItemStack disenchant(ItemStack item, Enchantment ench);
 
 	/**
 	 * Fully disenchants an ItemStack
@@ -50,7 +60,7 @@ public interface UEnchantsAPI {
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the level exceeds the maximum or is lower than 1.
 	 * @return the enchanted item, or null if the amount of enchantments is at the limit
 	 */
-	ItemStack enchant(ItemStack item, String name, int level) throws IllegalArgumentException;
+	ItemStack enchant(ItemStack item, String name, int level);
 
 	/**
 	 * Enchants an ItemStack with an enchantment, found by this namespaced key
@@ -60,7 +70,7 @@ public interface UEnchantsAPI {
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the level exceeds the maximum or is lower than 1.
 	 * @return the enchanted item, or null if the amount of enchantments is at the limit
 	 */
-	ItemStack enchant(ItemStack item, NamespacedKey key, int level) throws IllegalArgumentException;
+	ItemStack enchant(ItemStack item, NamespacedKey key, int level);
 
 	/**
 	 * Enchants an ItemStack with a given enchantment
@@ -70,7 +80,7 @@ public interface UEnchantsAPI {
 	 * @throws IllegalArgumentException if the level exceeds the maximum or is lower than 1.
 	 * @return the enchanted item, or null if the amount of enchantments is at the limit
 	 */
-	ItemStack enchant(ItemStack item, Enchantment ench, int level) throws IllegalArgumentException;
+	ItemStack enchant(ItemStack item, Enchantment ench, int level);
 
 	/**
 	 * Enchants a player's item with an enchantment of this name, except for when the amount of enchantments is at the limit
@@ -80,7 +90,7 @@ public interface UEnchantsAPI {
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the level exceeds the maximum or is lower than 1.
 	 */
-	void enchant(Player player, EquipmentSlot slot, String name, int level) throws IllegalArgumentException;
+	void enchant(Player player, EquipmentSlot slot, String name, int level);
 
 	/**
 	 * Enchants a player's item with an enchantment, found by this namespaced key, except for when the amount of enchantments is at the limit
@@ -90,7 +100,7 @@ public interface UEnchantsAPI {
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the level exceeds the maximum or is lower than 1.
 	 */
-	void enchant(Player player, EquipmentSlot slot, NamespacedKey key, int level) throws IllegalArgumentException;
+	void enchant(Player player, EquipmentSlot slot, NamespacedKey key, int level);
 
 	/**
 	 * Enchants a player's item with a given enchantment, except for when the amount of enchantments is at the limit
@@ -100,7 +110,7 @@ public interface UEnchantsAPI {
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the level exceeds the maximum or is lower than 1.
 	 */
-	void enchant(Player player, EquipmentSlot slot, Enchantment ench, int level) throws IllegalArgumentException;
+	void enchant(Player player, EquipmentSlot slot, Enchantment ench, int level);
 
 
 
@@ -112,7 +122,7 @@ public interface UEnchantsAPI {
 	 * @throws IllegalArgumentException if the enchantment wasn't found
 	 * @return the enchanted item, or null if the amount of enchantments is at the limit
 	 */
-	ItemStack enchantUnrestricted(ItemStack item, String name, int level) throws IllegalArgumentException;
+	ItemStack enchantUnrestricted(ItemStack item, String name, int level);
 
 	/**
 	 * Enchants an ItemStack with an enchantment, found by this namespaced key with no level restrictions
@@ -122,7 +132,7 @@ public interface UEnchantsAPI {
 	 * @throws IllegalArgumentException if the enchantment wasn't found
 	 * @return the enchanted item, or null if the amount of enchantments is at the limit
 	 */
-	ItemStack enchantUnrestricted(ItemStack item, NamespacedKey key, int level) throws IllegalArgumentException;
+	ItemStack enchantUnrestricted(ItemStack item, NamespacedKey key, int level);
 
 	/**
 	 * Enchants an ItemStack with a given enchantment with no level restrictions
@@ -141,7 +151,7 @@ public interface UEnchantsAPI {
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found
 	 */
-	void enchantUnrestricted(Player player, EquipmentSlot slot, String name, int level) throws IllegalArgumentException;
+	void enchantUnrestricted(Player player, EquipmentSlot slot, String name, int level);
 
 	/**
 	 * Enchants a player's item with an enchantment, found by this namespaced key with no level restrictions, except for when the amount of enchantments is at the limit
@@ -151,7 +161,7 @@ public interface UEnchantsAPI {
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found
 	 */
-	void enchantUnrestricted(Player player, EquipmentSlot slot, NamespacedKey key, int level) throws IllegalArgumentException;
+	void enchantUnrestricted(Player player, EquipmentSlot slot, NamespacedKey key, int level);
 
 	/**
 	 * Enchants a player's item with a given enchantment with no level restrictions, except for when the amount of enchantments is at the limit
