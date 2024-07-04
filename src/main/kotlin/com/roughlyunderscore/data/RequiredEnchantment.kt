@@ -54,7 +54,7 @@ data class RequiredEnchantment(
         if (obj == null) return null
 
         val key = obj.enchantmentKey.key
-        val seekerAliases = obj.seekers.joinToString(", ") { it.getAliases().first() }
+        val seekerAliases = obj.seekers.joinToString(", ") { it.aliases.first() }
         val levels = obj.levels.joinToString(", ")
 
         return "$key (${locale.logTokenRegistrySeekerPlural}: $seekerAliases) (${locale.tokenEnchantmentLevels}: $levels)"

@@ -39,10 +39,10 @@ data class EnchantmentCondition(
       override fun describeShortly(locale: UELocale, obj: EnchantmentCondition?): String? {
         if (obj == null) return null
 
-        val name = obj.condition.getAliases().firstOrNull() ?: return null
+        val name = obj.condition.aliases.firstOrNull() ?: return null
         val args =
           if (obj.arguments.isEmpty()) ""
-          else " (${obj.arguments.joinToString(" ")})"
+          else " ${obj.arguments.joinToString(" ")}"
         val negate =
           if (obj.negate) " (${locale.tokenEnchantmentNegated})"
           else ""

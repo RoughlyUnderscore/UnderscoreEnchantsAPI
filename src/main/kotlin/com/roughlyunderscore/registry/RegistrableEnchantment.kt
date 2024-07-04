@@ -20,7 +20,6 @@ import com.roughlyunderscore.debug.Describable
 import com.roughlyunderscore.ulib.data.Time
 import org.bukkit.Keyed
 import org.bukkit.Material
-import org.jetbrains.annotations.Range
 
 /**
  * This interface represents UnderscoreEnchants' registrable enchantments.
@@ -121,6 +120,14 @@ interface RegistrableEnchantment : Registrable, Keyed, Describable<RegistrableEn
    */
   @Since("2.2")
   val unique: Boolean
+
+  /**
+   * Whether the enchantment is stackable. If this value is set to true,
+   * all actions are repeated the amount of times that the enchantment
+   * is found with the seekers.
+   */
+  @Since("2.2")
+  val stackable: Boolean
 
   /**
    * All enchantments required to be present on the player in some way.

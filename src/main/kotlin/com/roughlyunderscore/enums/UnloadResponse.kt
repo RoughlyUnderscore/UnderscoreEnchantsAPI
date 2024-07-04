@@ -15,11 +15,13 @@
 package com.roughlyunderscore.enums
 
 import com.roughlyunderscore.annotations.Since
+import com.roughlyunderscore.api.UELoader
 
 /**
- * A self-documenting enum for the possible response types.
+ * This enum is used to indicate the result of unloading with a [UELoader].
+ * @see UELoader
  */
 @Since("2.2")
-enum class ItemStackEnchantResponseType {
-  SUCCESS, CONFLICTS, LIMIT_EXCEEDED, LEVEL_TOO_HIGH, CANT_APPLY_UNIQUE, HAS_UNIQUE, UNAPPLICABLE
+enum class UnloadResponse {
+  UNLOADED, NOT_FOUND
 }

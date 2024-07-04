@@ -15,8 +15,8 @@
 package com.roughlyunderscore.api
 
 import com.roughlyunderscore.annotations.Since
-import com.roughlyunderscore.enums.EnchantmentLoadResponse
-import com.roughlyunderscore.enums.EnchantmentUnloadResponse
+import com.roughlyunderscore.enums.LoadResponse
+import com.roughlyunderscore.enums.UnloadResponse
 import java.io.File
 
 /**
@@ -32,26 +32,75 @@ interface UELoader {
    * @return the response to the action
    */
   @Since("2.2")
-  fun loadEnchantment(enchantmentName: String): EnchantmentLoadResponse
+  fun loadEnchantment(enchantmentName: String): LoadResponse
+
+  /**
+   * Attempts to load an enchantment from a given [file].
+   * @return the response to the action
+   */
+  @Since("2.2")
+  fun loadEnchantment(file: File): LoadResponse
 
   /**
    * Attempts to unload an enchantment from a given [enchantmentName].
    * @return the response to the action
    */
   @Since("2.2")
-  fun unloadEnchantment(enchantmentName: String): EnchantmentUnloadResponse
+  fun unloadEnchantment(enchantmentName: String): UnloadResponse
+
+  /**
+   * Attempts to unload an enchantment from a given [file].
+   * @return the response to the action
+   */
+  @Since("2.2")
+  fun unloadEnchantment(file: File): UnloadResponse
 
   /**
    * Attempts to load an enchantment pack from a given [packFile].
    * @return the response to the action
    */
   @Since("2.2")
-  fun loadPack(packFile: File): EnchantmentLoadResponse
+  fun loadPack(packFile: File): LoadResponse
 
   /**
    * Attempts to unload an enchantment pack from a given [packFile].
    * @return the response to the action
    */
   @Since("2.2")
-  fun unloadPack(packFile: File): EnchantmentUnloadResponse
+  fun unloadPack(packFile: File): UnloadResponse
+
+  /**
+   * Attempts to unload an enchantment pack from a given [packName].
+   * @return the response to the action
+   */
+  @Since("2.2")
+  fun unloadPack(packName: String): UnloadResponse
+
+  /**
+   * Attempts to load a locale from a given [localeFile].
+   * @return the response to the action
+   */
+  @Since("2.2")
+  fun loadLocale(localeFile: File): LoadResponse
+
+  /**
+   * Attempts to load a locale from a given [localeName].
+   * @return the response to the action
+   */
+  @Since("2.2")
+  fun loadLocale(localeName: String): LoadResponse
+
+  /**
+   * Attempts to unload a locale from a given [localeFile].
+   * @return the response to the action
+   */
+  @Since("2.2")
+  fun unloadLocale(localeFile: File): UnloadResponse
+
+  /**
+   * Attempts to unload a locale from a given [localeName].
+   * @return the response to the action
+   */
+  @Since("2.2")
+  fun unloadLocale(localeName: String): UnloadResponse
 }

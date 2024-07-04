@@ -40,28 +40,28 @@ interface UEAPI {
    * Gets the primary server locale.
    */
   @Since("2.2")
-  fun getServerLocale(): UELocale
+  val serverLocale: UELocale
 
   /**
    * Gets the data registry. Use it to register your placeholders, actions, conditions, etc.
    * This is the **only** way that you should fetch the UnderscoreEnchantsAPI registry.
    */
   @Since("2.2")
-  fun getRegistry(): UEAPIRegistry
+  val registry: UEAPIRegistry
 
   /**
    * Gets the enchanter. Use it to enchant items, disenchant items, etc.
    * This is the **only** way that you should fetch the UnderscoreEnchantsAPI enchanter.
    */
   @Since("2.2")
-  fun getEnchanter(): UEEnchanter
+  val enchanter: UEEnchanter
 
   /**
    * Gets the loader. Use it to (un)load enchantments, packs, etc.
    * This is the **only** way that you should fetch the UnderscoreEnchantsAPI loader.
    */
   @Since("2.2")
-  fun getLoader(): UELoader
+  val loader: UELoader
 
   /**
    * Gets the player manager. Use it to toggle enchantments for players, manipulate
@@ -69,5 +69,5 @@ interface UEAPI {
    * This is the **only** way that you should fetch the UnderscoreEnchantsAPI player manager.
    */
   @Since("2.2")
-  fun getPlayerManager(): UEPlayerManager
+  val playerManager: UEPlayerManager
 }

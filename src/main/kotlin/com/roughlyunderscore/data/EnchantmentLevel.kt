@@ -50,7 +50,7 @@ data class EnchantmentLevel(
         val chance = obj.chance
         val cooldown = obj.cooldown.ticks
 
-        return "$level; ${locale.tokenEnchantmentActions}: $actions; ${locale.tokenEnchantmentConditions}:" +
+        return "$level; ${locale.tokenEnchantmentActions}: $actions; ${locale.tokenEnchantmentConditions}: " +
           "$conditions; ${locale.tokenEnchantmentChance}: $chance; ${locale.tokenEnchantmentCooldown}: $cooldown"
       }
 

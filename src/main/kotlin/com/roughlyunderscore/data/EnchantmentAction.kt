@@ -47,7 +47,7 @@ data class EnchantmentAction(
       override fun describeShortly(locale: UELocale, obj: EnchantmentAction?): String? {
         if (obj == null) return null
 
-        val name = obj.action.getAliases().firstOrNull() ?: return null
+        val name = obj.action.aliases.firstOrNull() ?: return null
         val args =
           if (obj.arguments.isEmpty()) ""
           else " (${obj.arguments.joinToString(" ")})"

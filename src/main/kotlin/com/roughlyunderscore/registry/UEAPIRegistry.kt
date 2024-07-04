@@ -16,6 +16,7 @@ package com.roughlyunderscore.registry
 
 import com.roughlyunderscore.annotations.Since
 import com.roughlyunderscore.data.EnchantmentPack
+import org.bukkit.NamespacedKey
 import org.bukkit.plugin.java.JavaPlugin
 
 /**
@@ -101,6 +102,20 @@ interface UEAPIRegistry {
   fun findTrigger(name: String): RegistrableTrigger?
 
   /**
+   * Finds an enchantment by a NamespacedKey.
+   * @return the enchantment, or null if not found
+   */
+  @Since("2.2")
+  fun findEnchantmentByKey(key: NamespacedKey): RegistrableEnchantment?
+
+  /**
+   * Finds an enchantment by its [keyString] (e.g. "test_enchantment" in "underscore:test_enchantment").
+   * Returns null if none is found.
+   */
+  @Since("2.2")
+  fun findEnchantmentByKeyString(keyString: String): RegistrableEnchantment?
+
+  /**
    * This method finds an enchantment seeker by its [name] (alias).
    * @return the seeker, or null if not found
    */
@@ -170,4 +185,52 @@ interface UEAPIRegistry {
    */
   @Since("2.2")
   fun findSeekers(plugin: JavaPlugin): List<RegistrableEnchantmentSeeker>
+
+  /**
+   * An immutable copy of all registered actions.
+   */
+  @Since("2.2")
+  val registeredActions: List<RegistrableAction>
+
+  /**
+   * An immutable copy of all registered activation indicators.
+   */
+  @Since("2.2")
+  val registeredActivationIndicators: List<RegistrableActivationIndicator>
+
+  /**
+   * An immutable copy of all registered applicables.
+   */
+  @Since("2.2")
+  val registeredApplicables: List<RegistrableApplicable>
+
+  /**
+   * An immutable copy of all registered conditions.
+   */
+  @Since("2.2")
+  val registeredConditions: List<RegistrableCondition>
+
+  /**
+   * An immutable copy of all registered enchantments.
+   */
+  @Since("2.2")
+  val registeredEnchantments: List<RegistrableEnchantment>
+
+  /**
+   * An immutable copy of all registered enchantment seekers.
+   */
+  @Since("2.2")
+  val registeredEnchantmentSeekers: List<RegistrableEnchantmentSeeker>
+
+  /**
+   * An immutable copy of all registered enchantment placeholders.
+   */
+  @Since("2.2")
+  val registeredPlaceholders: List<RegistrablePlaceholder>
+
+  /**
+   * An immutable copy of all registered triggers.
+   */
+  @Since("2.2")
+  val registeredTriggers: List<RegistrableTrigger>
 }

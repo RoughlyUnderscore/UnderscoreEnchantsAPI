@@ -12,16 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.roughlyunderscore.enums
+package com.roughlyunderscore.data.server
 
 import com.roughlyunderscore.annotations.Since
-import com.roughlyunderscore.api.UELoader
+import com.roughlyunderscore.annotations.Stable
+import com.roughlyunderscore.data.UELocale
+import kotlinx.serialization.Serializable
 
-/**
- * This enum is used to indicate the result of loading an enchantment with an [UELoader].
- * @see UELoader
- */
+@Serializable
 @Since("2.2")
-enum class EnchantmentLoadResponse {
-  LOADED, RELOADED, NOT_FOUND
+@Stable
+class BackendLocale private constructor() {
+  lateinit var locale: UELocale
+  lateinit var meta: ServerMeta
+
+  class Builder {
+    private val backendLocale = BackendLocale()
+
+    fun locale(locale: UELocale) = apply { backendLocale.locale = locale }
+    fun meta(meta: ServerMeta) = apply { backendLocale.meta = meta }
+    fun build() = backendLocale
+  }
 }

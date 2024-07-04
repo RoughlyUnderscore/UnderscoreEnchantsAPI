@@ -45,6 +45,7 @@ class ServerMeta : Describable<ServerMeta> {
 
     val PACK_PROVIDER = { id: Long -> Builder().id(id).type("pack").build() }
     val ENCH_PROVIDER = { id: Long -> Builder().id(id).type("ench").build() }
+    val LOCALE_PROVIDER = { id: Long -> Builder().id(id).type("locale").build() }
   }
 
 

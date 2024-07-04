@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.roughlyunderscore</groupId>
+    <groupId>com.roughlyunderscore</groupId>
     <artifactId>UnderscoreEnchantsAPI</artifactId>
     <version>2.2</version>
     <packaging>jar</packaging>
@@ -216,6 +216,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>roughly-underscore-releases</id>
+            <url>https://repo.runderscore.com/releases</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -242,9 +246,14 @@
             <version>1.6.3</version>
         </dependency>
         <dependency>
-            <groupId>io.github.roughlyunderscore</groupId>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.roughlyunderscore</groupId>
             <artifactId>ULib</artifactId>
-            <version>1.7</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

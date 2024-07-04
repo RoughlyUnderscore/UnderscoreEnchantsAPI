@@ -37,7 +37,7 @@ data class EnchantmentPack(
         if (obj == null) return null
 
         val metadata = obj.metadata.getDescriber().describeShortly(locale, obj.metadata)
-        val enchantmentNames = obj.enchantments.mapNotNull { it.getAliases().firstOrNull() }
+        val enchantmentNames = obj.enchantments.mapNotNull { it.aliases.firstOrNull() }
 
         return "$metadata; ${locale.tokenEnchantments}: ${enchantmentNames.joinToString(", ")}"
       }

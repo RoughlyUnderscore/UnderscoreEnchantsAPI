@@ -35,5 +35,5 @@ interface Registrable {
    * The aliases for this registrable.
    */
   @Since("2.2")
-  fun getAliases(): List<String>
+  val aliases: List<String>
 }

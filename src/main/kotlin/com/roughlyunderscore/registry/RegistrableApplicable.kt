@@ -29,4 +29,15 @@ interface RegistrableApplicable : Registrable {
    */
   @Since("2.2")
   fun canBeAppliedTo(type: Material): Boolean
+
+  /**
+   * This method indicates whether this applicable is registered
+   * or dynamically created (false if registered, true if dynamically
+   * created). Dynamically created applicables are those that start
+   * with `#` and indicate singular [Material]s. Please do not override
+   * this method and set it to true if you are just creating a registrable
+   * applicable. This is only internally overridden by the enchantment deserializer.
+   */
+  @Since("2.2")
+  val custom: Boolean get() = false
 }

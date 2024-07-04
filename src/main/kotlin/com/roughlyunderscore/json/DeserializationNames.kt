@@ -33,6 +33,7 @@ object DeserializationNames {
     val CONFLICTS = listOf("conflicts", "conflictsWith", "conflicts-with", "conflictswith", "conflicts_with")
     val UNIQUE = listOf("unique", "isUnique", "is-unique", "isunique", "is_unique")
     val CONDITIONS = listOf("conditions", "conds")
+    val STACKABLE = listOf("stackable")
     val LEVELS = listOf("levels", "lvls")
     val OBTAINMENT = listOf("obtainment", "obtainmentRestrictions", "obtainment-restrictions", "obtainmentrestrictions", "obtainment_restrictions")
     val REQUIRED_ENCHANTMENTS = listOf("requiredEnchantments", "requiredEnchantments", "required-enchantments", "requiredenchantments", "required_enchantments")
@@ -82,6 +83,7 @@ object DeserializationNames {
   }
 
   object Configuration {
+    val VERSION = listOf("config-version", "config_version", "configversion", "version", "schema", "config", "schemaversion", "schema-version", "schema_version")
     val SETTINGS = listOf("settings", "config", "configuration", "settingsNode", "configNode", "configurationNode")
     val MISC = listOf("misc", "miscellaneous", "miscNode", "miscellaneousNode")
     val GENERATION = listOf("generation", "gen", "genNode", "generationNode")
@@ -90,31 +92,30 @@ object DeserializationNames {
   }
 
   object Settings {
-    val GENERATE_README = listOf("generateReadme", "generate-readme", "generate_readme")
+    val GENERATE_README = listOf("generate-readme", "generateReadme", "generate_readme")
     val LOCALE = listOf("locale", "language", "lang")
-    val PLAYERS_CAN_CHANGE_LOCALES = listOf("playersCanChangeLocales", "players-can-change-locales", "players_can_change_locales")
-    val INCLUDE_DEFAULT_LOCALES = listOf("includeDefaultLocales", "include-default-locales", "include_default_locales")
-    val STORAGE_MEDIUM = listOf("storageMedium", "storage-medium", "storage_medium")
-    val STORAGE_SAVING_PERIOD_TICKS = listOf("storageSavingPeriodTicks", "storage-saving-period-ticks", "storage_saving_period_ticks")
-    val NOTIFY_PLAYERS_OF_DATA_LOADING = listOf("notifyPlayersOfDataLoading", "notify-players-of-data-loading", "notify_players_of_data_loading")
-    val REPOSITORY_URL = listOf("repositoryUrl", "repository-url", "repository_url")
-    val STRIP_SERVER_METADATA = listOf("stripServerMetadata", "strip-server-metadata", "strip_server_metadata")
+    val PLAYERS_CAN_CHANGE_LOCALES = listOf("players-can-change-locales", "playersCanChangeLocales", "players_can_change_locales")
+    val INCLUDE_DEFAULT_LOCALES = listOf("include-default-locales", "includeDefaultLocales", "include_default_locales")
+    val STORAGE_MEDIUM = listOf("storage-medium", "storageMedium", "storage_medium")
+    val STORAGE_SAVING_PERIOD_TICKS = listOf("storage-saving-period-ticks", "storageSavingPeriodTicks", "storage_saving_period_ticks")
+    val NOTIFY_PLAYERS_OF_DATA_LOADING = listOf("notify-players-of-data-loading", "notifyPlayersOfDataLoading", "notify_players_of_data_loading")
+    val REPOSITORY_URL = listOf("repository-url", "repositoryUrl", "repository_url")
   }
 
   object Misc {
-    val TO_RUN_METRICS = listOf("toRunMetrics", "to-run-metrics", "to_run_metrics")
-    val UPDATE_FREQUENCY = listOf("updateFrequency", "update-frequency", "update_frequency", "updateFrequencyHours", "update-frequency-hours", "update_frequency_hours")
-    val NOTIFY_OPS_ON_JOIN_ABOUT_UPDATES = listOf("notifyOpsOnJoinAboutUpdates", "notify-ops-on-join-about-updates", "notify_ops_on_join_about_updates")
+    val TO_RUN_METRICS = listOf("bStats", "toRunMetrics", "to-run-metrics", "to_run_metrics")
+    val UPDATE_FREQUENCY = listOf("update-checker-frequency-hours", "updateCheckerFrequencyHours", "updateFrequency", "update-frequency", "update_frequency", "updateFrequencyHours", "update-frequency-hours", "update_frequency_hours")
+    val NOTIFY_OPS_ON_JOIN_ABOUT_UPDATES = listOf("notify-ops-about-updates", "notifyOpsAboutUpdates", "notifyOpsOnJoinAboutUpdates", "notify-ops-on-join-about-updates", "notify_ops_on_join_about_updates")
   }
 
   object Generation {
-    val POPULATE_CHESTS_CHANCE = listOf("populateChestsChance", "populate-chests-chance", "populate_chests_chance")
-    val POPULATE_FISHING_CHANCE = listOf("populateFishingChance", "populate-fishing-chance", "populate_fishing_chance")
-    val POPULATE_VILLAGERS_CHANCE = listOf("populateVillagersChance", "populate-villagers-chance", "populate_villagers_chance")
+    val POPULATE_CHESTS_CHANCE = listOf("chest-loot-chance", "chestLootChance", "populateChestsChance", "populate-chests-chance", "populate_chests_chance")
+    val POPULATE_FISHING_CHANCE = listOf("fishing-loot-chance", "fishingLootChance", "fish-loot-chance,", "fishLootChance","populateFishingChance", "populate-fishing-chance", "populate_fishing_chance")
+    val POPULATE_VILLAGERS_CHANCE = listOf("villager-item-trade-chance", "villagerItemTradeChance", "populateVillagersChance", "populate-villagers-chance", "populate_villagers_chance")
   }
 
   object UI {
-    val truncatePackDataAfterXEnchantments = listOf("truncatePackDataAfterXEnchantments", "truncate-pack-data-after-x-enchantments", "truncate_pack_data_after_x_enchantments")
+    val TRUNCATE_PACK_DATA_AFTER_X_ENCHANTS = listOf("truncate-pack-data-after-x-enchantments", "truncatePackDataAfterXEnchantments", "truncate_pack_data_after_x_enchantments")
   }
 
   object Enchantments {

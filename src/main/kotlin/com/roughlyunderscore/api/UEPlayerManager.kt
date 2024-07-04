@@ -56,7 +56,8 @@ interface UEPlayerManager {
    * If [silent] is true, does not notify the player of the change.
    * Please note that only UnderscoreEnchants' enchantments can be disabled.
    * Vanilla enchantments cannot be disabled.
+   * @return true if the enchantment is now disabled, false otherwise
    */
   @Since("2.2")
-  fun toggle(uuid: UUID, key: NamespacedKey, silent: Boolean)
+  fun toggle(uuid: UUID, key: NamespacedKey, silent: Boolean): Boolean
 }

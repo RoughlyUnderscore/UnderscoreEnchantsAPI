@@ -26,15 +26,17 @@ import org.bukkit.plugin.java.JavaPlugin
  * for the sake of brevity.
  */
 class RegistrablesProviderExample : JavaPlugin() {
-  val provider = Bukkit.getServicesManager().getRegistration(UEAPI::class.java) ?: TODO() // throw an exception or something
-  val ueApi = provider.provider
 
   override fun onEnable() {
-    val provider = object: RegistrablesProvider {
-      override fun getAssociatedPlugin(): JavaPlugin = this@RegistrablesProviderExample
-      override fun getProvidedRegistrables(): List<Registrable> = listOf() // Your registrables
+    val serviceProvider = Bukkit.getServicesManager().getRegistration(UEAPI::class.java)
+    val ueApi = serviceProvider?.provider ?: run {
+      // Handle the missing UEAPI implementation
+      return
     }
 
-    ueApi.getRegistry().provide(provider)
+    ueApi.registry.provide(object: RegistrablesProvider {
+      override fun getAssociatedPlugin(): JavaPlugin = this@RegistrablesProviderExample
+      override fun getProvidedRegistrables(): List<Registrable> = listOf() // Your registrables
+    })
   }
 }
