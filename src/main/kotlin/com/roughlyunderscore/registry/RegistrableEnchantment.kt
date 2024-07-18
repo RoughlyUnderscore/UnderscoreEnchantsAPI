@@ -17,6 +17,7 @@ package com.roughlyunderscore.registry
 import com.roughlyunderscore.annotations.Since
 import com.roughlyunderscore.data.*
 import com.roughlyunderscore.debug.Describable
+import com.roughlyunderscore.enums.EnchantmentPlayer
 import com.roughlyunderscore.ulib.data.Time
 import org.bukkit.Keyed
 import org.bukkit.Material
@@ -113,6 +114,12 @@ interface RegistrableEnchantment : Registrable, Keyed, Describable<RegistrableEn
    */
   @Since("2.2")
   val enchantmentSeekers: List<RegistrableEnchantmentSeeker>
+
+  /**
+   * The player on whom to seek items, send the activation message, etc.
+   */
+  @Since("2.2")
+  val targetPlayer: EnchantmentPlayer
 
   /**
    * Whether the enchantment is unique. Unique enchantments are those

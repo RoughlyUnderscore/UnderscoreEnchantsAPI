@@ -14,6 +14,7 @@
 
 package com.roughlyunderscore.data.server
 
+import com.roughlyunderscore.enums.EnchantmentPlayer
 import com.roughlyunderscore.ulib.data.Time
 import kotlinx.serialization.Serializable
 import org.bukkit.Material
@@ -40,6 +41,7 @@ open class BackendMetalessEnchantment internal constructor() {
   lateinit var conflicts: List<String>
   lateinit var levels: List<BackendEnchantmentLevel>
   lateinit var seekers: List<String>
+  lateinit var targetPlayer: EnchantmentPlayer
   lateinit var restrictions: List<BackendObtainmentRestriction>
   var unique: Boolean = false
   lateinit var requiredEnchantments: List<BackendRequiredEnchantment>
@@ -64,6 +66,7 @@ open class BackendMetalessEnchantment internal constructor() {
     this@apply.conflicts = this@BackendMetalessEnchantment.conflicts
     this@apply.levels = this@BackendMetalessEnchantment.levels
     this@apply.seekers = this@BackendMetalessEnchantment.seekers
+    this@apply.targetPlayer = this@BackendMetalessEnchantment.targetPlayer
     this@apply.restrictions = this@BackendMetalessEnchantment.restrictions
     this@apply.unique = this@BackendMetalessEnchantment.unique
     this@apply.requiredEnchantments = this@BackendMetalessEnchantment.requiredEnchantments
@@ -92,6 +95,7 @@ open class BackendMetalessEnchantment internal constructor() {
     fun conflicts(conflicts: List<String>) = apply { enchantment.conflicts = conflicts }
     fun levels(levels: List<BackendEnchantmentLevel>) = apply { enchantment.levels = levels }
     fun seekers(seekers: List<String>) = apply { enchantment.seekers = seekers }
+    fun targetPlayer(player: EnchantmentPlayer) = apply { enchantment.targetPlayer = player }
     fun restrictions(restrictions: List<BackendObtainmentRestriction>) = apply { enchantment.restrictions = restrictions }
     fun unique(unique: Boolean) = apply { enchantment.unique = unique }
     fun requiredEnchantments(requiredEnchantments: List<BackendRequiredEnchantment>) = apply { enchantment.requiredEnchantments = requiredEnchantments }

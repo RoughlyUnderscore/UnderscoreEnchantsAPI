@@ -30,6 +30,11 @@ import org.bukkit.plugin.java.JavaPlugin
 interface UEAPIRegistry {
   /**
    * Provides a [RegistrablesProvider] to the API to register new items.
+   *
+   * Please use this method sparingly, as a call to [provide] causes some
+   * enchantments to be reloaded. Instead of calling [provide] multiple times,
+   * return a single [RegistrablesProvider] with a list of all the registrables
+   * you wish to provide.
    * @param provider the provider
    */
   @Since("2.2")

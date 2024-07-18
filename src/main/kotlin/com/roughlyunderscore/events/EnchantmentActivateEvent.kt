@@ -28,23 +28,17 @@ import org.bukkit.event.HandlerList
  * @property cancel Whether the event is cancelled.
  */
 @Since("2.2")
-class EnchantmentActivateEvent(val player: Player, val key: NamespacedKey)
-  : Event(), Cancellable
-{
+class EnchantmentActivateEvent(val player: Player, val key: NamespacedKey, val level: Int): Event(), Cancellable {
   private var cancel = false
 
-  override fun getHandlers(): HandlerList {
-    return Companion.handlers
-  }
+  override fun getHandlers() = Companion.handlers
 
   companion object {
     @JvmStatic
     private val handlers = HandlerList()
 
     @JvmStatic
-    fun getHandlerList(): HandlerList {
-      return handlers
-    }
+    fun getHandlerList() = handlers
   }
 
   override fun isCancelled(): Boolean = cancel

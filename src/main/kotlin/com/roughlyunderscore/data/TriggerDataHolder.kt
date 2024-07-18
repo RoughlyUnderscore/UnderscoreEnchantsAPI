@@ -19,6 +19,7 @@ import com.roughlyunderscore.enums.DataRetrievalType
 import org.bukkit.event.Event
 import java.lang.reflect.Method
 import com.roughlyunderscore.registry.RegistrableTrigger
+import org.jetbrains.annotations.ApiStatus.Internal
 
 /**
  * This class helps store [RegistrableTrigger]'s event-related data, such as
@@ -47,6 +48,13 @@ class TriggerDataHolder private constructor(val eventType: Class<out Event>) {
   }
 
   companion object {
+    /**
+     * This is an empty [TriggerDataHolder]. It is used internally to create an undiscovered trigger.
+     */
+    @Internal
+    @Deprecated("This should not be used by plugins. See the documentation")
+    val EMPTY = TriggerDataHolder(Event::class.java)
+
     /**
      * Does the same thing as the public constructor, but creates the methods from strings. If the method has not been found,
      * skips the entry entirely. [eventType] is the type of the trigger event and [methods] are the methods, encapsulated in pairs of

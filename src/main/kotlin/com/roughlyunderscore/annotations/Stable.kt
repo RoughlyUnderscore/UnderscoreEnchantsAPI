@@ -7,7 +7,7 @@ package com.roughlyunderscore.annotations
  *
  * Not every stable item must have this annotation, but every item with this annotation is stable.
  */
-@Retention(AnnotationRetention.SOURCE)
+@Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY, AnnotationTarget.FIELD)
 @MustBeDocumented
 @Since("2.2")

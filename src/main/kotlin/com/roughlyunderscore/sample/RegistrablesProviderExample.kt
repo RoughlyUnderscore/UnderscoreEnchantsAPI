@@ -26,7 +26,6 @@ import org.bukkit.plugin.java.JavaPlugin
  * for the sake of brevity.
  */
 class RegistrablesProviderExample : JavaPlugin() {
-
   override fun onEnable() {
     val serviceProvider = Bukkit.getServicesManager().getRegistration(UEAPI::class.java)
     val ueApi = serviceProvider?.provider ?: run {

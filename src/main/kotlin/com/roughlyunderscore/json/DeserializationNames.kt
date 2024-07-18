@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+@file:Suppress("unused")
+
 package com.roughlyunderscore.json
 
 /**
@@ -30,6 +32,7 @@ object DeserializationNames {
     val APPLICABLES = listOf("applicables", "applicable")
     val FORBIDDEN = listOf("forbidden", "forbiddenMaterials", "forbidden-materials", "forbiddenmaterials", "forbidden_materials")
     val SEEKERS = listOf("seekers", "seeker", "enchantmentSeekers", "enchantment-seekers", "enchantmentseekers", "enchantment_seekers")
+    val TARGET_PLAYER = listOf("target-player", "targetplayer", "targetPlayer", "target")
     val CONFLICTS = listOf("conflicts", "conflictsWith", "conflicts-with", "conflictswith", "conflicts_with")
     val UNIQUE = listOf("unique", "isUnique", "is-unique", "isunique", "is_unique")
     val CONDITIONS = listOf("conditions", "conds")
@@ -106,12 +109,14 @@ object DeserializationNames {
     val TO_RUN_METRICS = listOf("bStats", "toRunMetrics", "to-run-metrics", "to_run_metrics")
     val UPDATE_FREQUENCY = listOf("update-checker-frequency-hours", "updateCheckerFrequencyHours", "updateFrequency", "update-frequency", "update_frequency", "updateFrequencyHours", "update-frequency-hours", "update_frequency_hours")
     val NOTIFY_OPS_ON_JOIN_ABOUT_UPDATES = listOf("notify-ops-about-updates", "notifyOpsAboutUpdates", "notifyOpsOnJoinAboutUpdates", "notify-ops-on-join-about-updates", "notify_ops_on_join_about_updates")
+    val DEBUG = listOf("debug", "logger")
   }
 
   object Generation {
     val POPULATE_CHESTS_CHANCE = listOf("chest-loot-chance", "chestLootChance", "populateChestsChance", "populate-chests-chance", "populate_chests_chance")
     val POPULATE_FISHING_CHANCE = listOf("fishing-loot-chance", "fishingLootChance", "fish-loot-chance,", "fishLootChance","populateFishingChance", "populate-fishing-chance", "populate_fishing_chance")
     val POPULATE_VILLAGERS_CHANCE = listOf("villager-item-trade-chance", "villagerItemTradeChance", "populateVillagersChance", "populate-villagers-chance", "populate_villagers_chance")
+    val POPULATE_ENCHANTING_CHANCE = listOf("enchantment-chance", "enchantmentChance", "enchantment_chance", "enchanting-chance", "enchantingChance", "enchanting_chance")
   }
 
   object UI {
