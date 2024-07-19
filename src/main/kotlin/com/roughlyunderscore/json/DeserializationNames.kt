@@ -43,6 +43,7 @@ object DeserializationNames {
     val REQUIRED_PLUGINS = listOf("requiredPlugins", "requiredPlugins", "required-plugins", "requiredplugins", "required_plugins")
     val WORLD_WHITELIST = listOf("worldWhitelist", "world-whitelist", "worldwhitelist", "world_whitelist")
     val WORLD_BLACKLIST = listOf("worldBlacklist", "world-blacklist", "worldblacklist", "world_blacklist")
+    val VARIABLES = listOf("vars", "values", "variables")
   }
 
   object Condition {
